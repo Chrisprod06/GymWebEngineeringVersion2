@@ -214,19 +214,19 @@ function removeCustomer($conn, $userID)
 
 
 //function to add class
-function addClass($conn, $classID, $className, $day, $startTime, $endTime, $trainerID)
+function addClass($conn, $className, $day, $startTime, $endTime, $trainerID)
 {
 
-    $sql = 'INSERT INTO classes VALUES (?,?,?,?,?,?);';
+    $sql = 'INSERT INTO classes(className,day,startTime,endTime,trainerID) VALUES (?,?,?,?,?);';
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../adminModule/manageClasses.php?error=stmtfailed');
+        header('location: ../classes.php?error=stmtfailed');
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, 'sssssi', $classID, $className, $day, $startTime, $endTime, $trainerID);
+    mysqli_stmt_bind_param($stmt, 'ssssi', $className, $day, $startTime, $endTime, $trainerID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../adminModule/manageClasses.php?error=none');
+    header('location: ../classes.php?error=none');
     exit();
 }

@@ -32,7 +32,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="includes/logout.inc.php">Logout</a>
             </div>
         </div>
     </div>
@@ -62,6 +62,19 @@
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="js/paginationTable.js"></script>
+
+<!--Script to edit Customer modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'editCustomer' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#editCustomer").modal();
+  </script>
+<?php } ?>
+<!--Script to show delete Customer modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteCustomer' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteCustomer").modal();
+  </script>
+<?php } ?>
 
 </body>
 
