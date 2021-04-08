@@ -59,7 +59,7 @@ session_start();
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="homepage.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -76,26 +76,26 @@ session_start();
                 echo ' <!-- Nav Item - Customers -->
                     <li class="nav-item">
                        <a class="nav-link" href="customers.php">
-                           <i class="fas fa-home"></i>
+                           <i class="fas fa-user-friends"></i>
                            <span>Customers</span></a>
                    </li>
                    <!-- Nav Item - Classes -->
                    <li class="nav-item">
                        <a class="nav-link" href="classes.php">
-                           <i class="fas fa-home"></i>
+                           <i class="fas fa-dumbbell"></i>
                            <span>Classes</span></a>
                    </li>
                    
                    <!-- Nav Item - Trainers -->
                    <li class="nav-item">
                        <a class="nav-link" href="trainers.php">
-                           <i class="fas fa-home"></i>
+                           <i class="fas fa-user-friends"></i>
                            <span>Trainers </span></a>
                    </li>
                    <!-- Nav Item - ContactQueries -->
                    <li class="nav-item">
                        <a class="nav-link" href="contactQueries.php">
-                           <i class="fas fa-home"></i>
+                           <i class="fas fa-envelope"></i>
                            <span>Queries</span></a>
                    </li>';
             } else if ($_SESSION['role'] == 2) {
@@ -187,6 +187,10 @@ session_start();
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="editProfile.php">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Edit Profile
+                                </a>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout</a>
                             </div>

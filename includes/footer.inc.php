@@ -62,18 +62,20 @@
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="js/paginationTable.js"></script>
+<!--Sweet alerts used in the website-->
+
 
 <!--Script to edit Customer modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'editCustomer' == $_GET['modal']) { ?>
-  <script type='text/javascript'>
-    $("#editCustomer").modal();
-  </script>
+    <script type='text/javascript'>
+        $("#editCustomer").modal();
+    </script>
 <?php } ?>
 <!--Script to show delete Customer modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'deleteCustomer' == $_GET['modal']) { ?>
-  <script type='text/javascript'>
-    $("#deleteCustomer").modal();
-  </script>
+    <script type='text/javascript'>
+        $("#deleteCustomer").modal();
+    </script>
 <?php } ?>
 
 </body>

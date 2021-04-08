@@ -28,7 +28,7 @@ include_once 'includes/headerStart.inc.php';
 
 
 
-                            <form class="user" action="includes/register.inc.php" method = "POST">
+                            <form class="user" action="includes/register.inc.php" method="POST">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName" name="firstname" placeholder="First Name" required>
@@ -56,15 +56,42 @@ include_once 'includes/headerStart.inc.php';
                                         <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" name="repeatPassword" placeholder="Repeat Password" required>
                                     </div>
                                 </div>
+                                <?php
+                                if (isset($_GET['error'])) {
+                                    if ($_GET['error'] == 'emptyinput') {
+                                        echo '<p class = "text-danger text-center " >Fill in all the fields!</p>';
+                                    }
+
+                                    if ($_GET['error'] == 'emailExists') {
+                                        echo '<p class = "text-danger text-center " >User already exists!</p>';
+                                    }
+
+                                    if ($_GET['error'] == 'passworddontmatch') {
+                                        echo '<p class = "text-danger text-center " >The passwords must match!</p>';
+                                    }
+
+                                    if ($_GET['error'] == 'invalidemail') {
+                                        echo '<p class = "text-danger text-center " >The email you have entered is invalid!</p>';
+                                    }
+
+                                    if ($_GET['error'] == 'stmtfailed') {
+                                        echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
+                                    }
+                                }
+
+                                ?>
                                 <input type="submit" name="submitRegister" class="btn btn-primary btn-user btn-block" value="Register">
                                 <hr>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.php?role=">Forgot Password?</a>
+                                <a class="small" href="forgot-password.php">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.php?role=">Already have an account? Login!</a>
+                                <a class="small" href="login.php">Already have an account? Login!</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="index.php">Go Back</a>
                             </div>
                         </div>
                     </div>
@@ -83,6 +110,31 @@ include_once 'includes/headerStart.inc.php';
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
+    <?php
+    if (isset($_GET['registration'])) {
+        if ($_GET['registration'] == 'success') {
+            echo '
+                <script>
+                $(document).ready(function(){
+                Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Registration Successful!",
+                showConfirmButton: false,
+                timer: 1600                 
+                }).then(function() {
+                window.location.href="login.php";
+
+                })
+                });                 
+                </script>
+                ';
+        }
+    }
+    ?>
 
 </body>
 

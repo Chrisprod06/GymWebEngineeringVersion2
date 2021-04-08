@@ -92,7 +92,7 @@ function createUser($conn, $firstname, $lastname, $telephone, $address, $email, 
     mysqli_stmt_bind_param($stmt, "ssisssi", $firstname, $lastname, $telephone, $address, $email, $hashedPassword, $role);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../register.php?error=none');
+    header('location: ../register.php?registration=success');
     exit();
 }
 
@@ -134,7 +134,7 @@ function loginUser($conn, $email, $password, $role)
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
 
-        header('location: ../homepage.php');
+        header('location: ../login.php?login=success');
         exit();
     }
 }

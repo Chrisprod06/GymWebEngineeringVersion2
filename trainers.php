@@ -39,7 +39,7 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include_once 'includes/updateCustomersTable.inc.php'; ?>
+                        <?php include_once 'includes/updateTrainersTable.inc.php'; ?>
                     </tbody>
                 </table>
             </div>
