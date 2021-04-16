@@ -64,6 +64,28 @@
 <script type="text/javascript" charset="utf8" src="js/paginationTable.js"></script>
 <!--Sweet alerts used in the website-->
 
+    <?php
+    if (isset($_GET['message'])) {
+        if ($_GET['message'] == 'sent') {
+            echo '
+      <script>
+      $(document).ready(function(){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Message Sent Successfully!",
+          showConfirmButton: false,
+          timer: 1600                 
+        }).then(function() {
+           
+          
+        })
+      });                 
+      </script>
+      ';
+        } 
+    }
+    ?>
 
 <!--Script to edit Customer modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'editCustomer' == $_GET['modal']) { ?>

@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     //Update field in database
-    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ?, password=? WHERE  userID = ?";
+    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ? WHERE  userID = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -72,8 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "ssissi", $firstname, $lastname, $telephone, $email, $hashedPassword, $userID);
+    mysqli_stmt_bind_param($stmt, "ssissi", $firstname, $lastname, $telephone, $email, $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location: ../editProfile.php?stmtFailed');

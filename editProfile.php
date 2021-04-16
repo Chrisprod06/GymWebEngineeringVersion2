@@ -68,7 +68,7 @@ include_once 'includes/header.inc.php';
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>New Passowrd</label>
+                                                                    <label>New Password</label>
                                                                     <input class="form-control" type="password" name = "newPassword">
                                                                 </div>
                                                             </div>
