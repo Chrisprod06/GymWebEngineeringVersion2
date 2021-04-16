@@ -77,13 +77,13 @@ session_start();
                     <li class="nav-item">
                        <a class="nav-link" href="customers.php">
                            <i class="fas fa-user-friends"></i>
-                           <span>Customers</span></a>
+                           <span>My Customers</span></a>
                    </li>
                    <!-- Nav Item - Classes -->
                    <li class="nav-item">
                        <a class="nav-link" href="classes.php">
                            <i class="fas fa-dumbbell"></i>
-                           <span>Classes</span></a>
+                           <span>My Classes</span></a>
                    </li>
                    
                    <!-- Nav Item - Trainers -->
@@ -101,21 +101,21 @@ session_start();
             } else if ($_SESSION['role'] == 2) {
                 echo ' <!-- Nav Item - Customers -->
                 <li class="nav-item">
-                   <a class="nav-link" href="#">
-                       <i class="fas fa-home"></i>
+                   <a class="nav-link" href="MyCustomersTrainer.php">
+                       <i class="fas fa-user-friends"></i>
                        <span>My Customers</span></a>
                </li>
                <!-- Nav Item - Classes -->
                <li class="nav-item">
-                   <a class="nav-link" href="#>
-                       <i class="fas fa-home"></i>
+                   <a class="nav-link" href="MyClassesTrainer.php">
+                       <i class="fas fa-dumbbell"></i>
                        <span>My Classes</span></a>
                </li>
                
                <!-- Nav Item - Trainers -->
                <li class="nav-item">
                    <a class="nav-link" href="#">
-                       <i class="fas fa-home"></i>
+                       <i class="fas fa-envelope"></i>
                        <span>Contact</span></a>
                </li>
                ';
