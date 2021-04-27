@@ -2,6 +2,7 @@
 
 
 include_once 'dbh.inc.php';
+$trainerid=$_SESSION['userID'];
 
 $getusers = "SELECT customerID FROM enrolledclasses WHERE trainerID='$trainerid' ";
 $result = mysqli_query($conn, $getusers);
