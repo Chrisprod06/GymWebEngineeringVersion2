@@ -8,7 +8,7 @@ var application = new Vue({
     },
     methods: {
         fetchAllData: function () {
-            axios.post('../includes/enrollClass.inc.php', {
+            axios.post('includes/enrollClass.inc.php', {
                 action: 'fetchall'
             }).then(function (response) {
                 application.allData = response.data;
@@ -21,17 +21,17 @@ var application = new Vue({
             application.myModel = true;
         },
         submitData: function () {
-            if (application.first_name != '' && application.last_name != '') {
+            if (application.classID != '' && application.customerID != '') {
                 if (application.actionButton == 'Insert') {
-                    axios.post('../includes/enrollClass.inc.php', {
+                    axios.post('includes/enrollClass.inc.php', {
                         action: 'insert',
-                        firstName: application.first_name,
-                        lastName: application.last_name
+                        classID: application.classID,
+                        customerID: application.customerID
                     }).then(function (response) {
                         application.myModel = false;
                         application.fetchAllData();
-                        application.first_name = '';
-                        application.last_name = '';
+                        application.classID = '';
+                        application.customerID = '';
                         alert(response.data.message);
                     });
                 }
@@ -39,31 +39,8 @@ var application = new Vue({
             else {
                 alert("Fill All Field");
             }
-        },
-        fetchData: function (id) {
-            axios.post('../includes/enrollClass.inc.php', {
-                action: 'fetchSingle',
-                id: id
-            }).then(function (response) {
-                application.first_name = response.data.first_name;
-                application.last_name = response.data.last_name;
-                application.hiddenId = response.data.id;
-                application.myModel = true;
-                application.actionButton = 'Update';
-                application.dynamicTitle = 'Edit Data';
-            });
-        },
-        deleteData: function (id) {
-            if (confirm("Are you sure you want to remove this data?")) {
-                axios.post('../includes/enrollClass.inc.php', {
-                    action: 'delete',
-                    id: id
-                }).then(function (response) {
-                    application.fetchAllData();
-                    alert(response.data.message);
-                });
-            }
         }
+        
     },
     created: function () {
         this.fetchAllData();

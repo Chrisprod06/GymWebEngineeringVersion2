@@ -48,7 +48,9 @@ include_once 'includes/header.inc.php';
                                                             <div class="form-group">
                                                                 <label for ="classID">Choose Class</label>
                                                                 <select name="classID" v-model="classID" id="classID" class = "form-control">
+                                                                <option value=""></option>
                                                                     <?php
+                                                                    
                                                                     include_once 'includes/dbh.inc.php';
                                                                     $sql = "SELECT distinct * FROM classes ";
                                                                     $result = mysqli_query($conn, $sql);
@@ -63,6 +65,7 @@ include_once 'includes/header.inc.php';
                                                             <br />
                                                             <div align="center">
                                                                 <input type="hidden" v-model="hiddenId" />
+                                                                <input type="hidden" v-model ="customerID" value = "<?php echo $_SESSION['userID']?>">
                                                                 <input type="button" class="btn btn-success btn-xs" v-model="actionButton" @click="submitData" />
                                                             </div>
                                                         </div>
