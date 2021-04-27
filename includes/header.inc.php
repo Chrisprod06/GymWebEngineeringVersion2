@@ -121,6 +121,9 @@ session_start();
                ';
             }else if ($_SESSION['role'] == 3 ){
                 echo ' 
+
+            
+            
                <!-- Nav Item - Classes -->
                <li class="nav-item">
                    <a class="nav-link" href="MyClassesCustomer.php">

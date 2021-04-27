@@ -7,7 +7,7 @@ include_once 'includes/header.inc.php';
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-center mb-4">
         <h1 class="h3 mb-0 text-gray-800">Send Message</h1>
     </div>
 
