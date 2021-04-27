@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 //function for checking empty fields
 function emptyInputSignup($firstname, $lastname, $telephone, $address, $email, $password, $rePassword)
 {
@@ -114,6 +114,12 @@ function loginUser($conn, $email, $password, $role)
 
     $uidExists = emailExists($conn, $email, $role, 2);
 
+    if((int)$uidExists['role']!=$_SESSION['role']){
+        header('Location:../index.php?error=wrongRole');
+        exit();
+    }
+
+
     if ($uidExists === false) {
         header('location: ../login.php?error=wrongLogin');
         exit();
@@ -126,14 +132,14 @@ function loginUser($conn, $email, $password, $role)
         header('location: ../login.php?error=wrongPassword');
         exit();
     } else if ($checkPassword === true) {
-        session_start();     
+            
         $_SESSION['userID'] = $uidExists['userID'];
         $_SESSION['email'] = $uidExists['email'];
         $_SESSION['address'] = $uidExists['address'];
         $_SESSION['telephone'] = $uidExists['telephone'];
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
-
+        
         header('location: ../login.php?login=success');
         exit();
     }
@@ -214,17 +220,17 @@ function removeCustomer($conn, $userID)
 
 
 //function to add class
-function addClass($conn, $className, $day, $startTime, $endTime, $trainerID)
+function addClass($conn, $className, $day,$startDate,$endDate, $startTime, $endTime, $trainerID)
 {
 
-    $sql = 'INSERT INTO classes(className,day,startTime,endTime,trainerID) VALUES (?,?,?,?,?);';
+    $sql = 'INSERT INTO classes(className,day,startDate,endDate,startTime,endTime,trainerID) VALUES (?,?,?,?,?,?,?);';
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location: ../classes.php?error=stmtfailed');
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, 'ssssi', $className, $day, $startTime, $endTime, $trainerID);
+    mysqli_stmt_bind_param($stmt, 'ssssssi', $className, $day,$startDate,$endDate, $startTime, $endTime, $trainerID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header('location: ../classes.php?error=none');

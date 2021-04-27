@@ -16,7 +16,12 @@ if ($resultCheck > 0) {
                  <td>" . $row["telephone"] . "</td>
                  <td>" . $row["address"] . "</td>
                  <td>" . $row["email"] . "</td>
-                 
+                 <td>
+                  
+                 <a href='trainers.php?userID=";
+        echo $row["userID"];
+        echo "&modal=deleteTrainer'  class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
+                  </td>
                  
                 </tr> ";
     }
