@@ -62,6 +62,14 @@
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="js/paginationTable.js"></script>
+
+<!--Vue js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!--My vue modal script-->
+<script src="js/vueModal.js"></script>
+
 <!--Sweet alerts used in the website-->
 
     <?php

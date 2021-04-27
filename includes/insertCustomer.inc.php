@@ -10,6 +10,12 @@ if(isset($_POST['submit'])){
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $role= 3;
+    
+    $select = mysqli_query($conn, "SELECT `email` FROM `users` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($conn));
+	if (mysqli_num_rows($select)) {
+        header('Location: ../customers.php?error=emailExists');
+		exit();
+	}
 
     $sql = "INSERT INTO users (firstname, lastname, telephone,address, email, password, role) VALUES (?,?,?,?,?,?,?);";
 

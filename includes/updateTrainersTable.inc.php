@@ -2,7 +2,7 @@
 
 include 'dbh.inc.php';
 
-$sql = "SELECT * FROM users WHERE role = 3 ORDER BY userID ASC;";
+$sql = "SELECT * FROM users WHERE role = 2 ORDER BY userID ASC;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
