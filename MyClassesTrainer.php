@@ -32,6 +32,8 @@ include_once 'includes/header.inc.php';
                             <th>Class ID</th>
                             <th>Class Name</th>
                             <th>Day</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
                             <th>Start Time</th>
                             <th>End Time</th>
                         </tr>

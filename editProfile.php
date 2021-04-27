@@ -4,6 +4,9 @@ include_once 'includes/header.inc.php';
 ?>
 <section class="intro-single">
     <div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">My Profile</h1>
+    </div>
         <div class="row flex-lg-nowrap">
             <div class="col">
                 <div class="row">
@@ -35,7 +38,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="email" name="email" value="' . $_SESSION['email'] . '">
+                                                                    <input class="form-control" type="email" name="email" value="' . $_SESSION['email'] . '" readonly>
                                                                 </div>
                                                             </div>
                                                             <div class="col">
