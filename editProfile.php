@@ -76,7 +76,7 @@ include_once 'includes/header.inc.php';
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Confirm New<span class="d-none d-xl-inline">Password</span></label>
+                                                                    <label>Confirm New<span class="d-none d-xl-inline"> Password</span></label>
                                                                     <input class="form-control" type="password" name = "repeatNewPassword">
                                                                 </div>
                                                             </div>
@@ -101,9 +101,10 @@ include_once 'includes/header.inc.php';
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+    </div>
     </div>
 
 </section>

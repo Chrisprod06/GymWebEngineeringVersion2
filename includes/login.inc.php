@@ -4,7 +4,7 @@ if (isset($_POST['submitLogin'])) {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $role= $_SESSION['role'];
+    $role= (int)$_SESSION['role'];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';

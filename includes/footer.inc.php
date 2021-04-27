@@ -99,6 +99,24 @@
         $("#deleteCustomer").modal();
     </script>
 <?php } ?>
+<!--Script to show edit Class modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'editClass' == $_GET['modal']) { ?>
+    <script type='text/javascript'>
+        $("#editClass").modal();
+    </script>
+<?php } ?>
+<!--Script to show delete Class modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteClass' == $_GET['modal']) { ?>
+    <script type='text/javascript'>
+        $("#deleteClass").modal();
+    </script>
+<?php } ?>
+<!--Script to show delete Trainer modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteTrainer' == $_GET['modal']) { ?>
+    <script type='text/javascript'>
+        $("#deleteTrainer").modal();
+    </script>
+<?php } ?>
 
 </body>
 

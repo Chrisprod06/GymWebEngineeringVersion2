@@ -3,6 +3,8 @@ if (isset($_POST['submitAddClass'])) {
 
     $className = $_POST['className'];
     $day = $_POST['day'];
+    $startDate= $_POST['startDate'];
+    $endDate = $_POST['endDate'];
     $startTime = $_POST['startTime'];
     $endTime = $_POST['endTime'];
     $trainerID = (int)$_POST['trainerID'];
@@ -15,7 +17,7 @@ if (isset($_POST['submitAddClass'])) {
 
 
     //Function to add class
-    addClass($conn, $className, $day, $startTime, $endTime, $trainerID);
+    addClass($conn, $className, $day,$startDate,$endDate, $startTime, $endTime, $trainerID);
 } else {
     header('Location: ../classes.php');
     exit();

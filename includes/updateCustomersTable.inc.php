@@ -20,14 +20,6 @@ if ($resultCheck > 0) {
                  <td>
                   
                  <a href='customers.php?userID=";
-        echo $row["userID"] . "&firstname=";
-        echo $row['firstname'] . "&lastname=";;
-        echo $row['lastname'] . "&telephone=";
-        echo $row['telephone'] . "&address=";
-        echo $row['address'] . "&email=";
-        echo $row['email'];
-        echo "&modal=editCustomer' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
-                 <a href='customers.php?userID=";
         echo $row["userID"];
         echo "&modal=deleteCustomer'  class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
                   </td>

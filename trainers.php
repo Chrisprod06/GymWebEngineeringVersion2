@@ -88,12 +88,12 @@ include_once 'includes/header.inc.php';
         </div>
     </div>
     <!-- Delete Modal HTML -->
-    <div id="deleteCustomer" class="modal fade">
+    <div id="deleteTrainer" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="includes/deleteCustomer.inc.php" method="POST">
+                <form action="includes/deleteTrainer.inc.php" method="POST">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete Customer</h4>
+                        <h4 class="modal-title">Delete Trainer</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">

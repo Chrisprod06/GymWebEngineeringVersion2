@@ -34,9 +34,15 @@ include_once 'includes/header.inc.php';
                             <th>Class ID</th>
                             <th>Class Name</th>
                             <th>Day</th>
+                            <th>Start Day</th>
+                            <th>End Day</th>
                             <th>Start Time</th>
                             <th>End Time</th>
-                            <th>trainerID</th>
+                            <th>Role</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -60,6 +66,14 @@ include_once 'includes/header.inc.php';
                         <div class="form-group">
                             <label>Class Name*</label>
                             <input type="text" class="form-control" name="className" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Start Date*</label>
+                            <input type="date" class="form-control" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>End Date*</label>
+                            <input type="date" class="form-control" name="endDate" required>
                         </div>
                         <div class="form-group">
                             <label>Day*</label>
@@ -108,55 +122,84 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
     </div>
-
-    <!-- Edit Modal HTML -->
-    <div id="editCustomer" class="modal fade">
+   <!-- Edit Modal HTML -->
+   <div id="editClass" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="includes/updateCustomerRow.inc.php" method="POST">
+                <form action="includes/editClass.inc.php" method="POST">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Customer</h4>
+                        <h4 class="modal-title">Edit Class</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Firstname*</label>
-                            <input type="text" class="form-control" name="firstname" value='<?php echo $_GET['firstname'] ?>' required>
+                            <label>Class Name*</label>
+                            <input type="text" class="form-control" name="className" value = "<?php echo $_GET['className']?>" required>
                         </div>
                         <div class="form-group">
-                            <label>Lastname*</label>
-                            <input type="text" class="form-control" name="lastname" value='<?php echo $_GET['lastname'] ?>' required>
+                            <label>Start Date*</label>
+                            <input type="date" class="form-control" name="startDate"  value = "<?php echo $_GET['startDate']?>" required>
                         </div>
                         <div class="form-group">
-                            <label>Telephone*</label>
-                            <input type="text" class="form-control" name="telephone" value='<?php echo $_GET['telephone'] ?>' required>
+                            <label>End Date*</label>
+                            <input type="date" class="form-control" name="endDate"  value = "<?php echo $_GET['endDate']?>"   required>
                         </div>
                         <div class="form-group">
-                            <label>Address*</label>
-                            <input type="text" class="form-control" name="address" value='<?php echo $_GET['address'] ?>' required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email*</label>
-                            <input type="email" class="form-control" name="email" value='<?php echo $_GET['email'] ?>' required>
-                        </div>
+                            <label>Day*</label>
+                            <select class="form-control" name="day" id="day">
+                            
+                                <option  value = "<?php echo $_GET['day']?>"><?php echo $_GET['day']?></option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
 
+                        </div>
+                        <div class="form-group">
+                            <label>Start Time*</label>
+                            <input type="time" class="form-control" name="startTime" value = "<?php echo $_GET['startTime']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label>End Time*</label>
+                            <input type="time" class="form-control" name="endTime" value = "<?php echo $_GET['endTime']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label>TrainerID*</label>
+                            <select class = "form-control" name="trainerID" id="trainerID">
+                            <option  value = "<?php echo $_GET['trainerID']?>"><?php echo $_GET['trainerID']?></option>
+                                <?php
+                                include_once 'dbh.inc.php';
+                                $sql = "SELECT userID, firstname, lastname FROM users WHERE role=2;";
+                                $result = mysqli_query($conn, $sql);
+                                $resultCheck = mysqli_num_rows($result);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<option value = " . $row['userID'] . ">" . $row['userID'] . "," . $row['firstname'] . " " . $row['lastname'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                       
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="hidden" name="userID" value='<?php echo $_GET['userID'] ?>'>
-                        <button type="submit" value="Yes" class="btn btn-info">Save Changes</button>
+                        <input type="submit" name="submitAddClass" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
     <!-- Delete Modal HTML -->
-    <div id="deleteCustomer" class="modal fade">
+    <div id="deleteClass" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="includes/deleteCustomer.inc.php" method="POST">
+                <form action="includes/deleteClass.inc.php" method="POST">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete Customer</h4>
+                        <h4 class="modal-title">Delete Class</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -165,7 +208,7 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="hidden" name="userID" value='<?php echo $_GET['userID'] ?>'>
+                        <input type="hidden" name="classID" value='<?php echo $_GET['classID'] ?>'>
                         <button type="submit" value="Yes" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
