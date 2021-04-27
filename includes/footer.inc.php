@@ -84,8 +84,60 @@
       </script>
       ';
         } 
+    }?>
+
+    <?php
+
+    if (isset($_GET['updateDetails'])){
+        if ($_GET['updateDetails']=='successful') {
+            echo '
+            <script>
+            $(document).ready(function(){
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Information updated successfully!",
+                showConfirmButton: false,
+                timer: 1600                 
+              }).then(function() {
+                 
+                
+              })
+            });                 
+            </script>
+            '; 
+        }
     }
+
     ?>
+
+    <?php
+
+    if (isset($_GET['passwordUpdate'])){
+        if ($_GET['passwordUpdate']=='successful') {
+            echo '
+            <script>
+            $(document).ready(function(){
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Password successfully changed!",
+                showConfirmButton: false,
+                timer: 1600                 
+            }).then(function() {
+                
+                
+            })
+            });                 
+            </script>
+            '; 
+        }
+    }
+
+    ?>
+
+
+    
 
 <!--Script to edit Customer modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'editCustomer' == $_GET['modal']) { ?>
