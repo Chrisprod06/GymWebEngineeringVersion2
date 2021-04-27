@@ -22,13 +22,15 @@ session_start();
 
 
     <!-- Custom styles for this template-->
-    <link href="css\sb-admin-2.css" rel="stylesheet">
+    <link href="css\sb-admin-2.css?version=1" rel="stylesheet">
 
     <!--Sweet Alert-->
 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+    
 
 </head>
 
