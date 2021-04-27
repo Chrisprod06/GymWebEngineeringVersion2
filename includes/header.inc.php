@@ -112,14 +112,32 @@ session_start();
                        <span>My Classes</span></a>
                </li>
                
-               <!-- Nav Item - Trainers -->
+               <!-- Nav Item - Contact -->
                <li class="nav-item">
-                   <a class="nav-link" href="#">
+                   <a class="nav-link" href="sendMessageAdmin.php">
                        <i class="fas fa-envelope"></i>
                        <span>Contact</span></a>
                </li>
                ';
             }else if ($_SESSION['role'] == 3 ){
+                echo ' 
+
+            
+            
+               <!-- Nav Item - Classes -->
+               <li class="nav-item">
+                   <a class="nav-link" href="MyClassesCustomer.php">
+                       <i class="fas fa-dumbbell"></i>
+                       <span>My Classes</span></a>
+               </li>
+               
+               <!-- Nav Item - Contact -->
+               <li class="nav-item">
+                   <a class="nav-link" href="sendMessageAdmin.php">
+                       <i class="fas fa-envelope"></i>
+                       <span>Contact</span></a>
+               </li>
+               ';
                 
             }
             ?>

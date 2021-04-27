@@ -20,3 +20,4 @@ if ($resultCheck > 0) {
         </tr> ";
     }
 }
+?>
