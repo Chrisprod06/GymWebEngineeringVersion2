@@ -1,7 +1,7 @@
 <?php
 
 
-include_once '../includes/dbh.inc.php';
+include_once 'dbh.inc.php';
 
 $getusers = "SELECT customerID FROM enrolledclasses WHERE trainerID='$trainerid' ";
 $result = mysqli_query($conn, $getusers);
