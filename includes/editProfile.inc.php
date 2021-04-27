@@ -11,8 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $currentPassword = $_POST['currentPassword'];
     $newPassword = $_POST['newPassword'];
     $repeatNewPassword = $_POST['repeatNewPassword'];
-    $newsletter = $_POST['newsletter'];
-
 
     //Error handlers
     if ($_POST['currentPassword'] != '') {
@@ -55,16 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             mysqli_stmt_bind_param($stmt,"si",$hashedNewPassword,$userID);
             mysqli_stmt_execute($stmt);
-
-
+            header("Location: ../editProfile.php?passwordUpdate=successful");
+            exit();
         }
         mysqli_stmt_close($stmt);
         
     }
 
-
+    require_once 'dbh.inc.php';
     //Update field in database
-    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ? WHERE  userID = ?";
+    $sql = "UPDATE users SET firstname = ? ,lastname = ?, telephone = ?,address=?, email = ? WHERE  userID = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -72,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssissi", $firstname, $lastname, $telephone, $email, $userID);
+    mysqli_stmt_bind_param($stmt, "ssissi", $firstname, $lastname, $telephone,$address, $email, $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location: ../editProfile.php?stmtFailed');
@@ -82,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['lastname'] = $lastname;
         $_SESSION['telephone'] = $telephone;
         $_SESSION['email'] = $email;
-        header('Location: ../editProfile.php?update=successful');
+        header('Location: ../editProfile.php?updateDetails=successful');
         exit();
     }
 }

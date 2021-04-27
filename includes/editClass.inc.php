@@ -21,19 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     
-    mysqli_stmt_bind_param($stmt, "ssssssi" ,$className,$day,$startDate,$endDate,$startTime,$endTime,$trainerID);
+    mysqli_stmt_bind_param($stmt, "ssssssii" ,$className,$day,$startDate,$endDate,$startTime,$endTime,$trainerID,$classID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location:../customers.php?error=stmtFailed');
+        header('Location:../classes.php?error=stmtFailed');
         exit();
     } else {
-        header('Location:../customers.php?update=successful');
+        header('Location:../classes.php?update=successful');
         exit();
     }
 
     mysqli_stmt_close($stmt);
     exit();
 }else{
-    header('Location:../customers.php');
+    header('Location:../classes.php');
     exit();
 }

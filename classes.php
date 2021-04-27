@@ -30,7 +30,6 @@ include_once 'includes/header.inc.php';
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
-
                             <th>Class ID</th>
                             <th>Class Name</th>
                             <th>Day</th>
@@ -186,7 +185,8 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" name="submitAddClass" class="btn btn-success" value="Add">
+                        <input type="hidden" name = "classID" value = "<?php echo $_GET['classID']?>">
+                        <input type="submit" name="submitAddClass" class="btn btn-info" value="Save Changes">
                     </div>
                 </form>
             </div>

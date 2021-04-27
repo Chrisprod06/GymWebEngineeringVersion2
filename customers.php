@@ -67,7 +67,7 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label>Telephone*</label>
-                            <input type="text" class="form-control" name="telephone" required>
+                            <input type="number" class="form-control" name="telephone" required>
                         </div>
                         <div class="form-group">
                             <label>Email*</label>
@@ -116,7 +116,7 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label>Telephone*</label>
-                            <input type="text" class="form-control" name="telephone" value='<?php echo $_GET['telephone'] ?>' required>
+                            <input type="number" class="form-control" name="telephone" value='<?php echo $_GET['telephone'] ?>' required>
                         </div>
                         <div class="form-group">
                             <label>Address*</label>
