@@ -1,5 +1,4 @@
 <?php
-session_start(); 
 //function for checking empty fields
 function emptyInputSignup($firstname, $lastname, $telephone, $address, $email, $password, $rePassword)
 {
@@ -140,6 +139,7 @@ function loginUser($conn, $email, $password, $role)
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
         
+        
         header('location: ../login.php?login=success');
         exit();
     }
@@ -175,6 +175,6 @@ function addClass($conn, $className, $day,$startDate,$endDate, $startTime, $endT
     mysqli_stmt_bind_param($stmt, 'ssssssi', $className, $day,$startDate,$endDate, $startTime, $endTime, $trainerID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../classes.php?error=none');
+    header('location: ../classes.php?inserClass=success');
     exit();
 }

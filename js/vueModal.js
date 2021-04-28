@@ -16,17 +16,21 @@ var application = new Vue({
         },
         openModel: function () {
             application.classID = '';
+            application.customerID = '';
             application.actionButton = "Insert";
             application.dynamicTitle = "Enroll to a Class";
             application.myModel = true;
         },
         submitData: function () {
+            console.log(this.classID); //prints the data in entered in the form correctly
+            console.log(this.customerID);  //prints the data in entered in the form correctly
+
             if (application.classID != '' && application.customerID != '') {
                 if (application.actionButton == 'Insert') {
                     axios.post('includes/enrollClass.inc.php', {
                         action: 'insert',
                         classID: application.classID,
-                        customerID: application.customerID
+                        customerID: application.customerID,
                     }).then(function (response) {
                         application.myModel = false;
                         application.fetchAllData();
@@ -39,7 +43,7 @@ var application = new Vue({
             else {
                 alert("Fill All Field");
             }
-        }     
+        }
     },
     created: function () {
         this.fetchAllData();

@@ -64,8 +64,8 @@ include_once 'includes/header.inc.php';
                                                             </div>
                                                             <br />
                                                             <div align="center">
-                                                                <input type="hidden" v-model="hiddenId" />
-                                                                <input type="hidden" v-model="customerID" value="<?php echo $_SESSION['userID'] ?>">
+                                
+                                                                <input type="hidden" name= "customerID" id = "customerID" v-model="customerID" value="<?php echo $_SESSION['userID'] ?>">
                                                                 <input type="button" class="btn btn-success btn-xs" v-model="actionButton" @click="submitData" />
                                                             </div>
                                                         </div>

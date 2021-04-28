@@ -72,10 +72,10 @@
 
 <!--Sweet alerts used in the website-->
 
-    <?php
-    if (isset($_GET['message'])) {
-        if ($_GET['message'] == 'sent') {
-            echo '
+<?php
+if (isset($_GET['message'])) {
+    if ($_GET['message'] == 'sent') {
+        echo '
       <script>
       $(document).ready(function(){
         Swal.fire({
@@ -91,14 +91,14 @@
       });                 
       </script>
       ';
-        } 
-    }?>
+    }
+} ?>
 
-    <?php
+<?php
 
-    if (isset($_GET['updateDetails'])){
-        if ($_GET['updateDetails']=='successful') {
-            echo '
+if (isset($_GET['updateDetails'])) {
+    if ($_GET['updateDetails'] == 'successful') {
+        echo '
             <script>
             $(document).ready(function(){
               Swal.fire({
@@ -113,17 +113,17 @@
               })
             });                 
             </script>
-            '; 
-        }
+            ';
     }
+}
 
-    ?>
+?>
 
-    <?php
+<?php
 
-    if (isset($_GET['passwordUpdate'])){
-        if ($_GET['passwordUpdate']=='successful') {
-            echo '
+if (isset($_GET['passwordUpdate'])) {
+    if ($_GET['passwordUpdate'] == 'successful') {
+        echo '
             <script>
             $(document).ready(function(){
             Swal.fire({
@@ -138,14 +138,86 @@
             })
             });                 
             </script>
-            '; 
-        }
+            ';
     }
+}
 
-    ?>
+?>
+<?php
+
+if (isset($_GET['registration'])) {
+    if ($_GET['registration'] == 'success') {
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Registration successful!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+    }
+}
+
+?>
+<?php
+
+if (isset($_GET['deletion'])) {
+    if ($_GET['deletion'] == 'success') {
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Deletion successful!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+    }
+}
+
+?>
+<?php
+
+if (isset($_GET['insertClass'])) {
+    if ($_GET['insertClass'] == 'success') {
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Added new class successfully!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+    }
+}
+
+?>
 
 
-    
+
 
 <!--Script to edit Customer modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'editCustomer' == $_GET['modal']) { ?>
