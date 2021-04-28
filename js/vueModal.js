@@ -39,11 +39,9 @@ var application = new Vue({
             else {
                 alert("Fill All Field");
             }
-        }
-        
+        }     
     },
     created: function () {
         this.fetchAllData();
     }
 });
-

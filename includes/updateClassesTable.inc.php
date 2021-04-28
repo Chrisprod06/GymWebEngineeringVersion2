@@ -1,6 +1,6 @@
 <?php
 include_once 'dbh.inc.php';
-$sql = "SELECT * FROM  users NATURAL JOIN enrolledclasses NATURAL JOIN classes where role=2 or role=3; ";
+$sql = "SELECT * FROM  users NATURAL JOIN enrolledclasses NATURAL JOIN classes where role=2 or role=3 and userID in (Select trainerID From enrolledclasses) Or userID in (Select customerID from enrolledclasses); ";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 

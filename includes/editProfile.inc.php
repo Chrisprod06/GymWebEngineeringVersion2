@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
+    $address = $_POST['address'];
     $currentPassword = $_POST['currentPassword'];
     $newPassword = $_POST['newPassword'];
     $repeatNewPassword = $_POST['repeatNewPassword'];
@@ -79,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['firstname'] = $firstname;
         $_SESSION['lastname'] = $lastname;
         $_SESSION['telephone'] = $telephone;
+        $_SESSION['address'] = $address;
         $_SESSION['email'] = $email;
         header('Location: ../editProfile.php?updateDetails=successful');
         exit();
