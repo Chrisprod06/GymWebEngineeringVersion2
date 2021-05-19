@@ -7,23 +7,23 @@ var application = new Vue({
         dynamicTitle: 'Add Data',
     },
     methods: {
-        fetchAllData: function () {
+        fetchAllData: function() {
             axios.post('includes/enrollClass.inc.php', {
                 action: 'fetchall'
-            }).then(function (response) {
+            }).then(function(response) {
                 application.allData = response.data;
             });
         },
-        openModel: function () {
+        openModel: function() {
             application.classID = '';
             application.customerID = '';
-            application.actionButton = "Insert";
+            application.actionButton = "Ok";
             application.dynamicTitle = "Enroll to a Class";
             application.myModel = true;
         },
-        submitData: function () {
+        submitData: function() {
             console.log(this.classID); //prints the data in entered in the form correctly
-            console.log(this.customerID);  //prints the data in entered in the form correctly
+            console.log(this.customerID); //prints the data in entered in the form correctly
 
             if (application.classID != '' && application.customerID != '') {
                 if (application.actionButton == 'Insert') {
@@ -31,7 +31,7 @@ var application = new Vue({
                         action: 'insert',
                         classID: application.classID,
                         customerID: application.customerID,
-                    }).then(function (response) {
+                    }).then(function(response) {
                         application.myModel = false;
                         application.fetchAllData();
                         application.classID = '';
@@ -39,13 +39,12 @@ var application = new Vue({
                         alert(response.data.message);
                     });
                 }
-            }
-            else {
+            } else {
                 alert("Fill All Field");
             }
         }
     },
-    created: function () {
+    created: function() {
         this.fetchAllData();
     }
 });

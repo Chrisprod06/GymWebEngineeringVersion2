@@ -249,6 +249,12 @@ if (isset($_GET['insertClass'])) {
         $("#deleteTrainer").modal();
     </script>
 <?php } ?>
+<!--Script to show unenroll Trainer modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'unEnrollClass' == $_GET['modal']) { ?>
+    <script type='text/javascript'>
+        $("#unEnrollClass").modal();
+    </script>
+<?php } ?>
 
 </body>
 

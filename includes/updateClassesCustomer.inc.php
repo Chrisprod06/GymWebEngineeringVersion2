@@ -19,6 +19,11 @@ while($row=mysqli_fetch_assoc($result)){
          <td>" . $row2["startTime"] . "</td>
          <td>" . $row2["endTime"] . "</td>
          
+         <td>
+                  
+         <a href='MyClassesCustomer.php?classID=";
+echo $row["classID"];
+echo "&modal=unEnrollClass'  class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
           </td>
         </tr> ";
     }
