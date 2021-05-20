@@ -33,11 +33,9 @@ include_once 'includes/header.inc.php';
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <h1>Manager's User Manual</h1>
+                                                <h1>My Classes Trainer</h1>
 
-                                                <p>In this screen you can view information about system administrators,add new administrators
-                                                    as well as delete them or edit the details of an administrator. You can also
-                                                    create a report for the administrators.
+                                                <p>In this screen the trainer can view information about the classes that he/she teaches.
                                                 </p>
 
 
