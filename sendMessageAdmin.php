@@ -11,6 +11,57 @@ include_once 'includes/header.inc.php';
         <h1 class="h3 mb-0 text-gray-800">Send Message</h1>
     </div>
 
+    <div class="container" id="crudApp">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-12" align="right">
+ 
+                            <input type="button" class="btn btn-primary btn-xs" @click="openModel" value="Help" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="myModel">
+                <transition name="model">
+                    <div class="modal-mask">
+                        <div class="modal-wrapper">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" @click="myModel=false"><span aria-hidden="true">&times;</span></button>
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <h1>Manager's User Manual</h1>
+
+                                                <p>In this screen you can view information about system administrators,add new administrators
+                                                    as well as delete them or edit the details of an administrator. You can also
+                                                    create a report for the administrators.
+                                                </p>
+
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div align="center">
+
+                                            <input type="hidden" name="customerID" id="customerID" v-model="customerID" value="<?php echo $_SESSION['userID'] ?>">
+                                            <button type="button" class="close" @click="myModel=false"><span class = "btn btn-success" aria-hidden="true">Ok</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </div>
+
     <!-- Content Row -->
     <div class="row">
         <div class="col d-flex justify-content-center">
