@@ -15,7 +15,7 @@ include_once 'includes/header.inc.php';
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-12" align="right">
- 
+
                             <input type="button" class="btn btn-primary btn-xs" @click="openModel" value="Help" />
                         </div>
                     </div>
@@ -34,11 +34,9 @@ include_once 'includes/header.inc.php';
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <h1>Manager's User Manual</h1>
+                                                <h1>Manage Classes Admin</h1>
 
-                                                <p>In this screen you can view information about system administrators,add new administrators
-                                                    as well as delete them or edit the details of an administrator. You can also
-                                                    create a report for the administrators.
+                                                <p>In this screen you can view information about the classes of the gym as well as add a new class or remove an existing one.
                                                 </p>
 
 
@@ -50,7 +48,7 @@ include_once 'includes/header.inc.php';
                                         <div align="center">
 
                                             <input type="hidden" name="customerID" id="customerID" v-model="customerID" value="<?php echo $_SESSION['userID'] ?>">
-                                            <button type="button" class="close" @click="myModel=false"><span class = "btn btn-success" aria-hidden="true">Ok</span></button>
+                                            <button type="button" class="close" @click="myModel=false"><span class="btn btn-success" aria-hidden="true">Ok</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +76,7 @@ include_once 'includes/header.inc.php';
                         </div>
                     </div>
                 </div>
-                <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
+                <table id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Class ID</th>
@@ -149,8 +147,8 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label>TrainerID*</label>
-                            <select class = "form-control" name="trainerID" id="trainerID">
-                            <option value=""></option>
+                            <select class="form-control" name="trainerID" id="trainerID">
+                                <option value=""></option>
                                 <?php
                                 include_once 'dbh.inc.php';
                                 $sql = "SELECT userID, firstname, lastname FROM users WHERE role=2;";
@@ -162,7 +160,7 @@ include_once 'includes/header.inc.php';
                                 ?>
                             </select>
                         </div>
-                       
+
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -172,8 +170,8 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
     </div>
-   <!-- Edit Modal HTML -->
-   <div id="editClass" class="modal fade">
+    <!-- Edit Modal HTML -->
+    <div id="editClass" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="includes/editClass.inc.php" method="POST">
@@ -184,21 +182,21 @@ include_once 'includes/header.inc.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Class Name*</label>
-                            <input type="text" class="form-control" name="className" value = "<?php echo $_GET['className']?>" required>
+                            <input type="text" class="form-control" name="className" value="<?php echo $_GET['className'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>Start Date*</label>
-                            <input type="date" class="form-control" name="startDate"  value = "<?php echo $_GET['startDate']?>" required>
+                            <input type="date" class="form-control" name="startDate" value="<?php echo $_GET['startDate'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>End Date*</label>
-                            <input type="date" class="form-control" name="endDate"  value = "<?php echo $_GET['endDate']?>"   required>
+                            <input type="date" class="form-control" name="endDate" value="<?php echo $_GET['endDate'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>Day*</label>
                             <select class="form-control" name="day" id="day">
-                            
-                                <option  value = "<?php echo $_GET['day']?>"><?php echo $_GET['day']?></option>
+
+                                <option value="<?php echo $_GET['day'] ?>"><?php echo $_GET['day'] ?></option>
                                 <option value="Monday">Monday</option>
                                 <option value="Tuesday">Tuesday</option>
                                 <option value="Wednesday">Wednesday</option>
@@ -211,16 +209,16 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label>Start Time*</label>
-                            <input type="time" class="form-control" name="startTime" value = "<?php echo $_GET['startTime']?>" required>
+                            <input type="time" class="form-control" name="startTime" value="<?php echo $_GET['startTime'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>End Time*</label>
-                            <input type="time" class="form-control" name="endTime" value = "<?php echo $_GET['endTime']?>" required>
+                            <input type="time" class="form-control" name="endTime" value="<?php echo $_GET['endTime'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label>TrainerID*</label>
-                            <select class = "form-control" name="trainerID" id="trainerID">
-                            <option  value = "<?php echo $_GET['trainerID']?>"><?php echo $_GET['trainerID']?></option>
+                            <select class="form-control" name="trainerID" id="trainerID">
+                                <option value="<?php echo $_GET['trainerID'] ?>"><?php echo $_GET['trainerID'] ?></option>
                                 <?php
                                 include_once 'dbh.inc.php';
                                 $sql = "SELECT userID, firstname, lastname FROM users WHERE role=2;";
@@ -232,11 +230,11 @@ include_once 'includes/header.inc.php';
                                 ?>
                             </select>
                         </div>
-                       
+
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="hidden" name = "classID" value = "<?php echo $_GET['classID']?>">
+                        <input type="hidden" name="classID" value="<?php echo $_GET['classID'] ?>">
                         <input type="submit" name="submitAddClass" class="btn btn-info" value="Save Changes">
                     </div>
                 </form>
