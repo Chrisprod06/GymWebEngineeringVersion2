@@ -34,11 +34,12 @@ include_once 'includes/header.inc.php';
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <h1>Manager's User Manual</h1>
+                                                <h1>My Classes Customer</h1>
 
-                                                <p>In this screen you can view information about system administrators,add new administrators
-                                                    as well as delete them or edit the details of an administrator. You can also
-                                                    create a report for the administrators.
+                                                <p>In this screen the customer can view information about the classes he is currently 
+                                                 enrolled. The customer can enroll to a class by clicking the "Enroll to a Class" button, selecting 
+                                                 the class that he wants from the dropdown menu and clicking "Enroll". If the customer wants to unenroll  from
+                                                 a class he must simply press the trash bin button that is located in the right side of the class he wants to unenroll.
                                                 </p>
 
 

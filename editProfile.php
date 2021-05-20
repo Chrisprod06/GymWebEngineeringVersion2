@@ -30,11 +30,10 @@ include_once 'includes/header.inc.php';
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <h1>Manager's User Manual</h1>
+                                                <h1>Edit My Profile Manual</h1>
 
-                                                <p>In this screen you can view information about system administrators,add new administrators
-                                                    as well as delete them or edit the details of an administrator. You can also
-                                                    create a report for the administrators.
+                                                <p>In this screen you can change any information of your profile except the email by simply changing the text in the appropriate field 
+                                                and pressing "Save Changes".
                                                 </p>
 
 
