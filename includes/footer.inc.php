@@ -121,6 +121,31 @@ if (isset($_GET['updateDetails'])) {
 
 <?php
 
+if (isset($_GET['update'])) {
+    if ($_GET['update'] == 'successful') {
+        echo '
+            <script>
+            $(document).ready(function(){
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Information updated successfully!",
+                showConfirmButton: false,
+                timer: 1600                 
+              }).then(function() {
+                 
+                
+              })
+            });                 
+            </script>
+            ';
+    }
+}
+
+?>
+
+<?php
+
 if (isset($_GET['passwordUpdate'])) {
     if ($_GET['passwordUpdate'] == 'successful') {
         echo '
