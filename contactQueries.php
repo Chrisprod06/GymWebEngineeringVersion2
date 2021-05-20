@@ -34,11 +34,9 @@ include_once 'includes/header.inc.php';
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <h1>Manager's User Manual</h1>
+                                                <h1>Contact Queries Admin</h1>
 
-                                                <p>In this screen you can view information about system administrators,add new administrators
-                                                    as well as delete them or edit the details of an administrator. You can also
-                                                    create a report for the administrators.
+                                                <p>In this screen you can view the messages send to the admin from customers and trainers of the gym.
                                                 </p>
 
 
@@ -76,7 +74,7 @@ include_once 'includes/header.inc.php';
 
                     </div>
                 </div>
-                <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
+                <table  id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
 

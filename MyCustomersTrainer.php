@@ -73,7 +73,7 @@ include_once 'includes/header.inc.php';
                         
                     </div>
                 </div>
-                <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
+                <table  id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
 

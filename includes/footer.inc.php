@@ -187,6 +187,23 @@ if (isset($_GET['deletion'])) {
         });                 
         </script>
         ';
+    }else if ($_GET['deletion'] == 'error'){
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Deletion failed!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
     }
 }
 
@@ -202,6 +219,54 @@ if (isset($_GET['insertClass'])) {
             position: "center",
             icon: "success",
             title: "Added new class successfully!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+    }
+}
+
+?>
+<?php
+
+if (isset($_GET['error'])) {
+    if ($_GET['error'] == 'alreadyEnrolled') {
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Already enrolled!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+    }
+}
+
+?>
+<?php
+
+if (isset($_GET['enroll'])) {
+    if ($_GET['enroll'] == 'success') {
+        echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Enrolled Successfully!",
             showConfirmButton: false,
             timer: 1600                 
         }).then(function() {
