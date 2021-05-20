@@ -15,7 +15,7 @@ include_once 'includes/header.inc.php';
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-12" align="right">
-
+ 
                             <input type="button" class="btn btn-primary btn-xs" @click="openModel" value="Help" />
                         </div>
                     </div>
