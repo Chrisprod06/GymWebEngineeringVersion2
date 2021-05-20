@@ -175,6 +175,6 @@ function addClass($conn, $className, $day,$startDate,$endDate, $startTime, $endT
     mysqli_stmt_bind_param($stmt, 'ssssssi', $className, $day,$startDate,$endDate, $startTime, $endTime, $trainerID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../classes.php?inserClass=success');
+    header('location: ../classes.php?insertClass=success');
     exit();
 }

@@ -1,7 +1,8 @@
 <?php
-    $title = "Home | Gym";
-    include_once 'includes/headerStart.inc.php';
+$title = "Home | Gym";
+include_once 'includes/headerStart.inc.php';
 ?>
+
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -57,6 +58,7 @@
 
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -67,6 +69,34 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <!--Sweet Alert-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <?php
+
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] == 'wrongRole') {
+            echo '
+        <script>
+        $(document).ready(function(){
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Please login to the correct module!",
+            showConfirmButton: false,
+            timer: 1600                 
+        }).then(function() {
+            
+            
+        })
+        });                 
+        </script>
+        ';
+        }
+    }
+
+    ?>
 </body>
+
 
 </html>

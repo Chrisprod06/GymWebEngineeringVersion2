@@ -22,4 +22,8 @@ session_start();
     <link href="css/sb-admin-2.css?version=1" rel="stylesheet">
 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+     <!--Sweet Alert-->
+
+     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 </head>

@@ -4,24 +4,18 @@ if (isset($_POST['submit'])) {
 
     include_once 'dbh.inc.php';
 
-
-
-
-
-
-
     $classID = mysqli_escape_string($conn, $_POST['classID']);
     $customerID = mysqli_escape_string($conn, $_POST['customerID']);
 
     //Check if user is already enrolled and reject enrollment
 
-    $sql = "SELECT customerID FROM enrolledclasses WHERE customerID=?";
+    $sql = "SELECT customerID FROM enrolledclasses WHERE customerID=? AND classID =?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../MyClassesCustomer.php?error=stmtFailed");
         exit();
     } else {
-        mysqli_stmt_bind_param($stmt, "i", $customerID);
+        mysqli_stmt_bind_param($stmt, "ii", $customerID,$classID);
         if (!mysqli_stmt_execute($stmt)) {
             header("Location: ../MyClassesCustomer.php?error=stmtFailed");
             exit();

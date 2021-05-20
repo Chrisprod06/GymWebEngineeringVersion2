@@ -232,6 +232,7 @@ if (isset($_GET['insertClass'])) {
 }
 
 ?>
+
 <?php
 
 if (isset($_GET['error'])) {
